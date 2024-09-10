@@ -1,0 +1,14 @@
+{
+  "requestId": "c1234abc-5678-efgh-9012-ijklmn345opq",
+  "sourceIp": "54.68.157.8",
+  "requestTime": "01/Sep/2024:12:34:56 +0000",
+  "httpMethod": "GET",
+  "routeKey": "GET /items",
+  "status": "200",
+  "responseLength": "512",
+  "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36",
+  "integrationRequestId": "abc123-request",
+  "integrationStatus": "200",
+  "errorMessage": "",
+  "errorType": ""
+}

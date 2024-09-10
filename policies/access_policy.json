@@ -1,0 +1,36 @@
+{
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Effect": "Allow",
+      "Principal": "*",
+      "Action": "execute-api:Invoke",
+      "Resource": "arn:aws:execute-api:us-east-1:<account-no>:<api-gateway-id>/<stage-name>/*/*"
+    },
+    {
+      "Effect": "Deny",
+      "Principal": "*",
+      "Action": "execute-api:Invoke",
+      "Resource": "arn:aws:execute-api:us-east-1:<account-no>:<api-gateway-id>/<stage-name>/*/*",
+      "Condition": {
+        "StringNotEqualsIfExists": {
+          "aws:VpcSourceIp": "10.1xx.x.x/16"
+        },
+        "NotIpAddress": {
+          "aws:SourceIp": [
+            "174.129.105.183",
+            "54.68.157.8"
+          ]
+        }
+      }
+    },
+    {
+      "Effect": "Allow",
+      "Principal": {
+        "AWS": "*"
+      },
+      "Action": "execute-api:Invoke",
+      "Resource": "arn:aws:execute-api:us-east-1:<account-no>:<api-gateway-id>/<stage-name>/OPTIONS/*"
+    }
+  ]
+}
